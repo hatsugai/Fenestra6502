@@ -1,0 +1,10 @@
+A15   A14   A13   A12   A11   A10   A9    A8    A7    A6    BA7   GND
+-     -     -     -     -     -     -     -     -     SEL   RA7   VCC
+
+EQUATIONS
+
+SEL = /A15 * /A14 * /A13 * /A12 * /A11 * /A10 * /A9 * /A8 * /A7 * /A6
+    + /A15 * /A14 * /A13 * /A12 * /A11 * /A10 * /A9 * /A8 * /A7 * A6
+    + /A15 * /A14 * /A13 * /A12 * /A11 * /A10 * /A9 * /A8 * A7 * /A6
+
+RA7 = SEL * BA7 + /SEL * A7

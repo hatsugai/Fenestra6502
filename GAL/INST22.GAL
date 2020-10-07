@@ -1,0 +1,20 @@
+CLK   D0    D1    D2    D3    D4    D5    D6    D7    SYNC  RWB   GND
+BE    RD    WR    -     CLK3  CLK2  DU    CTEN  OE    WE    E     VCC
+
+EQUATIONS
+
+E = /CLK
+CLK2 = CLK
+CLK3 = CLK
+
+; JSR 0x20
+; RTS 0x60
+
+; D/U = (DB=0x20) * SYNC
+/DU = SYNC * /D7 * /D6 * D5 * /D4 * /D3 * /D2 * /D1 * /D0
+
+; /CTEN = (DB=0x20 | DB=0x60) * SYNC
+/CTEN = SYNC * /D7 * D5 * /D4 * /D3 * /D2 * /D1 * /D0
+
+/OE = BE * E *  RWB + /BE * RD
+/WE = BE * /CLK * /RWB + /BE * WR
