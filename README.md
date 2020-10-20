@@ -314,6 +314,7 @@ int tarai(int x, int y, int z)
 | W65C02S (2MHZ), cc65      | 11.669 | 198.801 |
 | Z80 (4MHZ), SDCC          |  6.296 |  83.256 |
 | MC6809 (2MHz), gcc6809    |  4.824 |  51.421 |
+| MC6800 (2MHz), CCLV       |  9.461 | 102.639 |
 
 (unit: sec)
 
